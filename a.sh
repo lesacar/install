@@ -37,4 +37,4 @@ wget https://raw.github.com/lesacar/install/master/b.sh
 cp b.sh /mnt
 echo "Base Arhch Linux is installed, setting up Arch Linux"
 sleep 3
-arch-chroot /mnt /mnt/b.sh
+arch-chroot /mnt bash /b.sh
