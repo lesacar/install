@@ -7,8 +7,8 @@ echo "You must choose GPT when a prompt shows up"
 sleep 1
 echo "Choose disk to format/install"
 lsblk -d -n -l
-read -p "Choose /dev/sda or /dev/nvme0n1: >> " disk
-cfdisk $disk
+read -p "Choose sda or nvme0n1: >> " disk
+cfdisk /dev/$disk
 echo "--------"
 echo "Printing partition table"
 echo "--------"
@@ -22,10 +22,10 @@ echo 'Set boot partition to $bootp '
 echo "--------"
 echo "Creating file systems"
 mkfs.ext4 $rootp
-mkfs.fat -F32 $bootp
+mkfs.fat -F32 /dev/$bootp
 mount $rootp /mnt
-mkdir /mnt/boot/efi
-mount $bootp /mnt/boot/efi
+mkdir -R /mnt/boot/efi
+mount /dev/$bootp /mnt/boot/efi
 sleep 1
 echo "Starting Arch Linux download"
 sleep 3
