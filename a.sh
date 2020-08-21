@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "This is my Arch Linux install script"$'\n'"it works only on UEFI systems"$'\n'"If you want the legacy BIOS version check my repoitory"
 echo "Set keyboard layout (only croatian and german)"
 read -p "Type 'de' for german or 'croat' for croatian: >> " lang1
 loadkeys $lang1
