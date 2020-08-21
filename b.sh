@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "If you are reading this, the base installation has succeeded, starting graphical interface installation and configuring system"
 echo "-- Choose Desktop --"
-echo "The Desktop enviroment is the graphical interface you will be interacting with (all the icons, start menu, task bar, etc...)
+echo "The Desktop enviroment is the graphical interface you will be interacting with (all the icons, start menu, task bar, etc...)"
 read -p "Type 'plasma kde-applications' for KDE --< KDE looks similar to windows, users coming from windows might find it easier to use >-- type 'gnome gnome-extra' for GNOME --< looks similar to macOS, comes by defalt on Ubuntu >--" de
 pacman -Syyu --noconfirm
 pacman -S networkmanager xorg xorg-xinit man-db man-pages linux-headers --noconfirm
