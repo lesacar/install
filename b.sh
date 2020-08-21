@@ -20,7 +20,7 @@ echo "Setting network settings"
 read -p "Enter hostname for computer (computer name): >> " hostnm
 sleep 1
 echo "$hostnm" >> /etc/hostname
-echo "127.0.0.1		localhost"$'\n'"::1		localhost"$'\n'"127.01.1	$hostnm.localdomain $hostnm"
+echo "127.0.0.1		localhost"$'\n'"::1		localhost"$'\n'"127.01.1	$hostnm.localdomain $hostnm" >> /etc/hosts
 echo "-------"
 echo "Change root password"
 read -s -p "New root password: >> " roopas
@@ -40,13 +40,12 @@ pacman -S xf86-video-$gpudrvrs --noconfirm
 echo "If all went right Arch Linux was successfully installed"
 echo "You need to reboot your computer to boot into the installation"
 echo "--------"
+echo "READ BELOW ON HOW TO INSTALL NVIDIA DRIVERS"
+echo "pacman -S nvidia nvidia-utils --noconfirm" >> nvidia.sh
+echo "cp nvidia.sh /mnt/nvidia.sh"$'\n'"arch-chroot /mnt sh nvidia.sh" >> install-nvidia.sh
+echo "To install Nvidia graphics drivers type 'sh install-nvidia.sh'
+echo "---------------------------------"
 echo "To reboot you need to type:"
-echo "exit"
 echo "umount -R /mnt"
 echo "reboot"
 echo "----------"
-echo "READ BELOW ON HOW TO INSTALL NVIDIA DRIVERS"
-echo "pacman -S nvidia nvidia-utils --noconfirm" >> /etc/install-gpu-drvr.sh
-echo "A file has been added to /etc called /etc/install-gpu-drvr.sh"
-echo "Type 'sh /etc/install-gpu-drvr.sh' to install the nvidia drivers"
-echo "You can press the tab key to autocomplete commands or file paths, you can try it out by typing 'sh /etc/install' and pressing tab"
