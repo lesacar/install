@@ -44,12 +44,4 @@ echo "Install graphics driver"
 read -p "IF YOU ARE USING A NVIDIA GRAPHICS CARD YOU WILL NEED TO MANUALLY INSTALL THE DRIVER, READ THE GUIDE AFTER THE INSTALLATION HAS COMPLETED. Type amdgpu for amd graphics, intel for intel graphics, or vmware for vmware graphics" gpudrvrs
 pacman -S xf86-video-$gpudrvrs --noconfirm
 echo "If all went right Arch Linux was successfully installed"
-echo "You need to reboot your computer to boot into the installation"
-echo "--------"
-echo "READ BELOW ON HOW TO INSTALL NVIDIA DRIVERS"
-echo "To install Nvidia graphics drivers type 'sh install-nvidia.sh'"
 echo "---------------------------------"
-echo "To reboot you need to type:"
-echo "umount -R /mnt"
-echo "reboot"
-echo "----------"
