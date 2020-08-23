@@ -22,9 +22,9 @@ read -p "Enter boot partition: >> " bootp
 echo 'Set boot partition to $bootp '
 echo "--------"
 echo "Creating file systems"
-mkfs.ext4 $rootp
+mkfs.ext4 /dev/$rootp
 mkfs.fat -F32 /dev/$bootp
-mount $rootp /mnt
+mount /dev/$rootp /mnt
 mkdir -R /mnt/boot/efi
 mount /dev/$bootp /mnt/boot/efi
 sleep 1
