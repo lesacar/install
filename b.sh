@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "-- Choose Desktop --"
 echo "The Desktop enviroment is the graphical interface you will be interacting with (all the icons, start menu, task bar, etc...)"
+echo "You can leave the below blank if you have your own build of a graphical interface or you can typeyour choice if it isn't listed"
 read -p "Type 'plasma kde-applications' for KDE --< KDE looks similar to windows, users coming from windows might find it easier to use >-- type 'gnome gnome-extra' for GNOME --< looks similar to macOS, comes by defalt on Ubuntu >-- Type 'xfce4 xfce4-goodies' for xfce --< Also similar to windows but more retro-looking and lightweight >--" de
 pacman -Syyu --noconfirm
 pacman -S networkmanager xorg xorg-xinit man-db man-pages linux-headers $de --noconfirm
