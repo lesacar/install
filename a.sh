@@ -37,5 +37,15 @@ sleep 1
 wget https://raw.github.com/lesacar/install/master/b.sh
 cp b.sh /mnt
 echo "Base Arhch Linux is installed, setting up Arch Linux"
+echo "pacman -S nvidia nvidia-utils --noconfirm" >> nvidia.sh
+cp nvidia.sh /mnt/nvidia.sh
+echo "arch-chroot /mnt bash nvidia.sh" >> install-nvidia.sh
 sleep 3
 arch-chroot /mnt bash /b.sh
+echo "---------"
+echo "Arch Linux has been successfully installed"
+echo "IF YOU HAVE A NVIDIA GRAPHICS CARD TYPE 'sh install-nvidia.sh'"
+echo "---------"
+echo "The last step is to reboot you computer"
+echo "umount -R /mnt"$'\n'"reboot"
+echo "Type 'sh reboot.sh' to reboot"
