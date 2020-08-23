@@ -40,6 +40,10 @@ echo "$nusrnm:$pswfnu" | chpasswd
 pacman -S grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
+echo "You will need to specify what CPU brand you're using"
+read -p "Type 'amd' for amd or 'intel' for intel >> " cpu
+pacman -S $cpu-ucode --noconfirm
+echo "-------"
 echo "Install graphics driver"
 read -p "IF YOU ARE USING A NVIDIA GRAPHICS CARD YOU WILL NEED TO MANUALLY INSTALL THE DRIVER, READ THE GUIDE AFTER THE INSTALLATION HAS COMPLETED. Type amdgpu for amd graphics, intel for intel graphics, or vmware for vmware graphics" gpudrvrs
 pacman -S xf86-video-$gpudrvrs --noconfirm
