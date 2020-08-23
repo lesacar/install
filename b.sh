@@ -1,9 +1,15 @@
 #!/bin/bash
 echo "-- Choose Desktop --"
 echo "The Desktop enviroment is the graphical interface you will be interacting with (all the icons, start menu, task bar, etc...)"
-read -p "Type 'plasma kde-applications' for KDE --< KDE looks similar to windows, users coming from windows might find it easier to use >-- type 'gnome gnome-extra' for GNOME --< looks similar to macOS, comes by defalt on Ubuntu >--" de
+read -p "Type 'plasma kde-applications' for KDE --< KDE looks similar to windows, users coming from windows might find it easier to use >-- type 'gnome gnome-extra' for GNOME --< looks similar to macOS, comes by defalt on Ubuntu >-- Type 'xfce4 xfce4-goodies' for xfce --< Also similar to windows but more retro-looking and lightweight >--" de
 pacman -Syyu --noconfirm
-pacman -S networkmanager xorg xorg-xinit man-db man-pages linux-headers --noconfirm
+pacman -S networkmanager xorg xorg-xinit man-db man-pages linux-headers $de --noconfirm
+systemctl enable NetworkManager
+systemctl start NetworkManager
+echo "--------"
+echo "Installing the sddm display manager"
+pacman -S sddm --noconfirm
+systemctl enable sddm
 echo "--------"
 echo "Select timezone"
 read -p "Timezone - Region >> " reg
@@ -41,9 +47,7 @@ echo "If all went right Arch Linux was successfully installed"
 echo "You need to reboot your computer to boot into the installation"
 echo "--------"
 echo "READ BELOW ON HOW TO INSTALL NVIDIA DRIVERS"
-echo "pacman -S nvidia nvidia-utils --noconfirm" >> nvidia.sh
-echo "cp nvidia.sh /mnt/nvidia.sh"$'\n'"arch-chroot /mnt sh nvidia.sh" >> install-nvidia.sh
-echo "To install Nvidia graphics drivers type 'sh install-nvidia.sh'
+echo "To install Nvidia graphics drivers type 'sh install-nvidia.sh'"
 echo "---------------------------------"
 echo "To reboot you need to type:"
 echo "umount -R /mnt"
