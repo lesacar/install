@@ -43,5 +43,4 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo "Install graphics driver"
 read -p "IF YOU ARE USING A NVIDIA GRAPHICS CARD YOU WILL NEED TO MANUALLY INSTALL THE DRIVER, READ THE GUIDE AFTER THE INSTALLATION HAS COMPLETED. Type amdgpu for amd graphics, intel for intel graphics, or vmware for vmware graphics" gpudrvrs
 pacman -S xf86-video-$gpudrvrs --noconfirm
-echo "If all went right Arch Linux was successfully installed"
 echo "---------------------------------"
