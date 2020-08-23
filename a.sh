@@ -25,7 +25,7 @@ echo "Creating file systems"
 mkfs.ext4 /dev/$rootp
 mkfs.fat -F32 /dev/$bootp
 mount /dev/$rootp /mnt
-mkdir -R /mnt/boot/efi
+mkdir -p /mnt/boot/efi
 mount /dev/$bootp /mnt/boot/efi
 sleep 1
 echo "Starting Arch Linux download"
