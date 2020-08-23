@@ -42,10 +42,9 @@ cp nvidia.sh /mnt/nvidia.sh
 echo "arch-chroot /mnt bash nvidia.sh" >> install-nvidia.sh
 sleep 3
 arch-chroot /mnt bash /b.sh
-echo "---------"
 echo "Arch Linux has been successfully installed"
 echo "IF YOU HAVE A NVIDIA GRAPHICS CARD TYPE 'sh install-nvidia.sh'"
 echo "---------"
 echo "The last step is to reboot you computer"
-echo "umount -R /mnt"$'\n'"reboot"
+echo "umount -R /mnt"$'\n'"reboot" >> reboot.sh
 echo "Type 'sh reboot.sh' to reboot"
