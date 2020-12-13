@@ -38,8 +38,10 @@ echo "--------"
 echo "Downloaded Arch Linux system files"
 sleep 1
 curl -LO https://raw.github.com/lesacar/install/master/b.sh
-cp b.sh /mnt
-echo "Base Arhch Linux is installed, setting up Arch Linux"
+echo "bootype=$bootype" >> c.sh
+cat b.sh >> c.sh
+cp c.sh /mnt
+echo "Base Arch Linux is installed, setting up Arch Linux"
 echo "pacman -S nvidia nvidia-utils --noconfirm" >> nvidia.sh
 cp nvidia.sh /mnt/nvidia.sh
 echo "arch-chroot /mnt bash nvidia.sh" >> install-nvidia.sh
