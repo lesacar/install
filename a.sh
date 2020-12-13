@@ -50,7 +50,7 @@ echo "pacman -S nvidia nvidia-utils --noconfirm" >> nvidia.sh
 cp nvidia.sh /mnt/nvidia.sh
 echo "arch-chroot /mnt bash nvidia.sh" >> install-nvidia.sh
 sleep 3
-arch-chroot /mnt bash /a.sh
+arch-chroot /mnt bash /c.sh
 echo "Arch Linux has been successfully installed"
 echo "IF YOU HAVE A NVIDIA GRAPHICS CARD TYPE 'sh install-nvidia.sh'"
 echo "---------"
