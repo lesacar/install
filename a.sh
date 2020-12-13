@@ -1,6 +1,9 @@
 #!/bin/bash
 bootype=bios
 ls /sys/irmware/efi/efivars >/dev/null 2>&1 && bootype=efi
+echo $bootype
+sleep 2
+clear
 echo "This is my Arch Linux install script"$'\n'"it works only on UEFI systems"$'\n'"If you want the legacy BIOS version check my repoitory"
 echo "Set keyboard layout (only croatian and german)"
 read -p "Type 'de' for german or 'croat' for croatian: >> " lang1
@@ -39,6 +42,7 @@ echo "Downloaded Arch Linux system files"
 sleep 1
 curl -LO https://raw.github.com/lesacar/install/master/b.sh
 echo "bootype=$bootype" >> c.sh
+echo "rootp=$rootp" >> c.sh
 cat b.sh >> c.sh
 cp c.sh /mnt
 echo "Base Arch Linux is installed, setting up Arch Linux"
