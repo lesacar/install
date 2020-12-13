@@ -34,7 +34,7 @@ pacstrap /mnt base base-devel linux linux-firmware vim
 echo "--------"
 echo "Downloaded Arch Linux system files"
 sleep 1
-wget https://raw.github.com/lesacar/install/master/b.sh
+curl -LO https://raw.github.com/lesacar/install/master/b.sh
 cp b.sh /mnt
 echo "Base Arhch Linux is installed, setting up Arch Linux"
 echo "pacman -S nvidia nvidia-utils --noconfirm" >> nvidia.sh
